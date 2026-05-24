@@ -1,0 +1,20 @@
+{
+	"manifest_version": 3,
+	"name": "DeepSeek Tool Bridge2",
+	"version": "2.0",
+	"permissions": ["scripting"],
+	"host_permissions": ["https://chat.deepseek.com/*", "http://localhost:8080/*"],
+	"content_scripts": [
+		{
+			"matches": ["https://chat.deepseek.com/*"],
+			"js": ["content.js"],
+			"run_at": "document_start"
+		}
+	],
+	"web_accessible_resources": [
+		{
+			"resources": ["inject.js", "visual.js"],
+			"matches": ["https://chat.deepseek.com/*"]
+		}
+	]
+}
